@@ -191,7 +191,7 @@ Below are the successive databases that have been generated during the anonymiza
 		4. Statistical tests: hypothesis contrasts.
 
 
-* **5.2 Inferential Statistics - Survival Analysis:** this notebook performs a survival analysis of patients who have suffered an intracranial hemorrhage. Survival is defined as survival to hospitalization discharge. Different biostatiscal techniques are used for that purpose, including the well-known ***Kaplain-Meier estimator***, ***Mantel-Cox (log-rank) test***, and the **state-of-the-art** method for survival prediction until the last *adaptations of Machine Learning algorithms for survival analysis*, ***Cox Proportional Hazards regression***,.
+* **5.2 Inferential Statistics - Survival Analysis:** this notebook performs a survival analysis of patients who have suffered an intracranial hemorrhage. Survival is defined as survival to hospitalization discharge. Different biostatiscal techniques are used for that purpose, including the well-known ***Kaplain-Meier estimator***, ***Mantel-Cox (log-rank) test***, and the **state-of-the-art** method for survival prediction until the last *adaptations of Machine Learning algorithms for survival analysis*, ***Cox Proportional Hazards regression***.
 
 		1. Load dataset.
 		2. Define survival variables.
@@ -220,4 +220,4 @@ Below are the successive databases that have been generated during the anonymiza
 		3. Gradient Boosted Model.
 		4. Accelerated Failure Time Model.
 
-	-----------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------

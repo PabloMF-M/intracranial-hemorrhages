@@ -26,8 +26,8 @@ The aim of this project is to find new prognostic factors of ICH and develop a r
 2 - PROJECT WORKFLOW SUMMARY
 ---------------------------
 
-2.1 (Anonymization, Cleaning and Curation)
-------------------------------------------
+2.1. (Anonymization, Cleaning and Curation)
+-------------------------------------------
 
 Below are the successive databases that have been generated during the anonymization and cleaning process, up to the final database used for the project. In parentheses are the notebooks that were used to carry out the transformations.
 
@@ -76,17 +76,17 @@ Below are the successive databases that have been generated during the anonymiza
 3 - MATERIALS AND METHODS
 ------------------------
 
-3.1 Available Databases
------------------------
+3.1. Available Databases
+-------------------------
 
 *Unavailable databases are not described here, they are described in Databases/readme_databases.txt*
 
-3.1.1 Datasets
---------------
+3.1.1. Datasets
+----------------
 
-* **ICH_database_anonymized.csv**: data collected from 300 patients with Intracranial Hemorrhages (ICH) was fully anonymized by removing patient identifiers and relevant dates (e.g., birth or death dates).
+* **<code>ICH_database_anonymized.csv</code>**: data collected from 300 patients with Intracranial Hemorrhages (ICH) was fully anonymized by removing patient identifiers and relevant dates (e.g., birth or death dates).
 
-* **ICH_database.csv**: ICH_database_anonymized.csv cleaned after the following steps:
+* **<code>ICH_database.csv</code>**: <code>ICH_database_anonymized.csv</code> cleaned after the following steps:
 	* Assignation of variable datatypes.
 	* Correction of incorrect data values.
 	* Rename variables with variable labels.
@@ -94,26 +94,25 @@ Below are the successive databases that have been generated during the anonymiza
 	* Removal of variables with redundant information.
 	* Removal of dates which only contain the value "anonymized".
 
-* **ICH_database.rds**: ICH_database.csv saved as R object in .rds (RDS) to preserve variable datatypes.
+* **<code>ICH_database.rds</code>**: <code>ICH_database.csv</code> saved as R object in .rds (RDS) to preserve variable datatypes.
 
-* **ICH_database.hdf5**: ICH_database.csv saved as .hdf5 file (HDF5) to preserve variable datatypes.
+* **<code>ICH_database.hdf5</code>**: <code>ICH_database.csv</code> saved as .hdf5 file (HDF5) to preserve variable datatypes.
 		
 
-3.1.2 Metadata
---------------
-
-		· 'ICH_database_anonymized_metadata.csv': file with information about the variables in 'ICH_database_anonymized.csv':
-       			-- Variable_Name: name of the variable (spanish).
-       	 		-- Variable_R_Name: name of the variable given by R.
-			-- Variable_Label: recommended name of the variable for further database analysis.
-      			-- Variable_Definition: definition of the variable.
-       			-- R_Datatype: recommended R datatype for the variable.
-       			-- Python_Datatype: recommended Python datatype for the variable.
-			-- Pandas_Datatype: recommended Pandas datatype for the variable.
-       			-- Values: values that the variable can have.
-       			-- Maximum_Number_of_Different_Values_in_the_Dataset: maximum number of possible different values in the dataset.
-       			-- Comment: comments about the variable.
-       			-- Type_of_Variable: if variable is a priori an outcome (dependent), predictor (independent), or if it just contains additional information about the dataset (auxiliary).
+3.1.2. Metadata
+----------------
+* **<code>ICH_database_anonymized_metadata.csv</code>**: file with information about the variables in <code>ICH_database_anonymized.csv</code>:
+	* <code>Variable_Name:</code> name of the variable (spanish).
+	* <code>Variable_R_Name:</code> name of the variable given by R.
+	* <code>Variable_Label:</code> recommended name of the variable for further database analysis.
+	* <code>Variable_Definition:</code> definition of the variable.
+	* <code>R_Datatype:</code> recommended R datatype for the variable.
+	* <code>Python_Datatype:</code> recommended Python datatype for the variable.
+	* <code>Pandas_Datatype:</code> recommended Pandas datatype for the variable.
+	* <code>Values:</code> values that the variable can have.
+	* <code>Maximum_Number_of_Different_Values_in_the_Dataset:</code> maximum number of possible different values in the dataset.
+	* <code>Comment:</code> comments about the variable.
+	* <code>Type_of_Variable:</code> if variable is *a priori* an outcome (dependent), predictor (independent), or if it just contains additional information about the dataset (auxiliary).
 
 		· 'ICH_database_anonymized_metadata.xls': same as 'ICH_database_anonymized_metadata.csv' but in .xls.
 
@@ -130,8 +129,8 @@ Below are the successive databases that have been generated during the anonymiza
        			-- Type_of_Variable: if variable is a priori an outcome (dependent) or a predictor (independent), or if the variable just contains additional information about the dataset (auxiliary).
 
 
-	3.2. Notebooks
-	--------------
+3.2. Notebooks
+--------------
 
 	· 'A. Loading the dataset in python': describe the best options to load the dataset in python.
 

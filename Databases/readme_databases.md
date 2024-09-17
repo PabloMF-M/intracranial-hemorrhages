@@ -17,7 +17,7 @@
 
 
 2 - DATABASES
--------------
+--------------
 
 * **<code>ICH_database_complete.xlsx</code>**: complete database.
 
@@ -28,60 +28,57 @@
 * **<code>ICH_database_nonredudant_pseudoanonymized.csv</code>**: <code>ICH_database_complete_pseudoanonymized.csv</code> without some redundant or non-useful atributes.
 
 * **<code>ICH_database_anonymized.csv</code>**: <code>ICH_database_nonredudant_pseudoanonymized.csv</code> fully anonymized by the:
+	* Anonymization of: <code>Fecha de ingreso</code>, <code>Fecha de alta</code>, <code>Fecha de TC</code>, <code>Fecha análisis de sangre</code>, <code>Fecha nacimiento</code>, <code>Fecha mortalidad.</code>
+	* Addition of: <code>Time between blood analysis and head CT scan</code>, <code>Age at the hospital admission date</code>, <code>Survival days after admission</code>.
 
-		- Anonymization of: Fecha de ingreso, Fecha de alta, Fecha de TC, Fecha análisis de sangre, Fecha nacimiento, Fecha mortalidad.
-		- Incorporation of: Time between blood analysis and head CT scan, Age at the hospital admission date, Survival days after admission.
+* **<code>ICH_database.csv</code>**: <code>ICH_database_anonymized.csv</code> cleaned (assignation of variable datatypes, correction of incorrect data values, rename variables with the variable labels, and removal of variables that only had a different value or with redundant information and dates which only contain the value "anonymized").
 
-* **<code>ICH_database.csv</code>**: 'ICH_database_anonymized.csv' cleaned (assignation of variable datatypes, correction of incorrect data values, rename variables with the variable labels, and elimination of variables with only one different value or with redundant information and dates which only contain the value "anonymized").
+* **<code>ICH_database.rds</code>**: <code>ICH_database.csv</code> saved as R object in <code>.rds</code> to preserve variable datatypes.
 
-* **<code>ICH_database.rds</code>**: 'ICH_database.csv' saved as R object in .rds to preserve variable datatypes.
+* **<code>ICH_database.hdf5</code>**: <code>ICH_database.csv</code> saved as hdf5 file to preserve variable datatypes.
 
-* **<code>ICH_database.hdf5</code>**: 'ICH_database.csv' saved as hdf5 file to preserve variable datatypes.
+* **<code>ICH_database_anonymized_metadata.csv</code>**: file with information about the variables of <code>ICH_database_nonredudant_pseudoanonymized.csv</code> and <code>ICH_database_anonymized.csv</code>. This file contains the following variables:
+	* <code>Variable_Name:</code> name of the variable (spanish).
+	* <code>Variable_R_Name:</code> name of the variable given by R.
+	* <code>Variable_Label:</code> recommended name of the variable for further database analysis.
+	* <code>Variable_Definition:</code> definition of the variable.
+	* <code>R_Datatype:</code> recommended R datatype for the variable.
+	* <code>Python_Datatype:</code> recommended Python datatype for the variable.
+	* <code>Pandas_Datatype:</code> recommended Pandas datatype for the variable.
+	* <code>Values:</code> values that the variable can have.
+	* <code>Maximum_Number_of_Different_Values_in_the_Dataset:</code> maximum number of possible different values in the dataset.
+	* <code>Comment:</code> comments about the variable.
+	* <code>Type_of_Variable:</code> if variable is *a priori* an **outcome** (***dependent***) or a **predictor** (***independent***), or if the variable just contains additional information about the dataset (***auxiliary***).
 
-* **<code>ICH_database_anonymized_metadata.csv</code>**: file with information about the variables of 'ICH_database_nonredudant_pseudoanonymized.csv' and 'ICH_database_anonymized.csv'. This file contains the following variables:
-       		- Variable_Name: name of the variable (spanish).
-       	 	- Variable_R_Name: name of the variable given by R.
-		- Variable_Label: recommended name of the variable for further database analysis.
-      		- Variable_Definition: definition of the variable.
-       		- R_Datatype: recommended R datatype for the variable.
-       		- Python_Datatype: recommended Python datatype for the variable.
-		- Pandas_Datatype: recommended Pandas datatype for the variable.
-       		- Values: values that the variable can have.
-       		- Maximum_Number_of_Different_Values_in_the_Dataset: maximum number of possible different values in the dataset.
-       		- Comment: comments about the variable.
-       		- Type_of_Variable: if variable is a priori an outcome (dependent) or a predictor (independent), or if the variable just contains additional information about the dataset (auxiliary).
+* **<code>ICH_database_anonymized_metadata.xls</code>**: same as <code>ICH_database_anonymized_metadata.csv</code> but in <code>.xls.</code>
 
-* **<code>ICH_database_anonymized_metadata.xls</code>**: same as 'ICH_database_anonymized_metadata.csv' but in .xls.
-
-* **<code>ICH_database_metadata.csv</code>**: file with information about the variables of 'ICH_database.csv'. This file contains the following variables:
-		- Variable_Name: name of the variable (spanish).
-		- Variable_Label: name of the variable in the database.
-      		- Variable_Definition: definition of the variable.
-       		- R_Datatype: R datatype.
-       		- Python_Datatype: Python datatype.
-		- Pandas_Datatype: Pandas datatype.
-       		- Values: values that the variable can have.
-       		- Maximum_Number_of_Different_Values_in_the_Dataset: maximum number of possible different values in the dataset.
-       		- Comment: comments about the variable.
-       		- Type_of_Variable: if variable is a priori an outcome (dependent) or a predictor (independent), or if the variable just contains additional information about the dataset (auxiliary).
-
+* **<code>ICH_database_metadata.csv</code>**: file with information about the variables of <code>ICH_database.csv</code>. This file contains the following variables:
+	* <code>Variable_Name</code>: name of the variable (spanish).
+	* <code>Variable_Label</code>: name of the variable in the database.
+	* <code>Variable_Definition</code>: definition of the variable.
+	* <code>R_Datatype</code>: R datatype.
+	* <code>Python_Datatype</code>: Python datatype.
+	* <code>Pandas_Datatype</code>: Pandas datatype.
+	* <code>Values</code>: values that the variable can have.
+	* <code>Maximum_Number_of_Different_Values_in_the_Dataset</code>: maximum number of possible different values in the dataset.
+	* <code>Comment</code>: comments about the variable.
+	* <code>Type_of_Variable</code>: if variable is *a priori* an **outcome** (***dependent***) or a **predictor** (***independent***), or if the variable just contains additional information about the dataset (***auxiliary***).
 
 
-3. MAIN DATABASE CONTENT (ICH_database)
----------------------------------------
+2 - MAIN DATABASE CONTENT (<code>ICH_database</code>)
+-------------------------------------------------------
 
-	The cleanest version of ICH database is 'ICH_database', which is available in three formats (.csv, .rds, .hdf5). This database is accompanied by another file ('ICH_database_metadata') having all the relevant database metadata, including the definition of all variables. These variables, group by categories are the following:
+The cleanest version of the ***ICH database*** is <code>ICH_database</code>, which is available in three formats (<code>.csv</code>, <code>.rds</code>, <code>.hdf5</code>). This database is accompanied by another file (<code>ICH_database_metadata</code>) containing all relevant metadata, including the definitions of all variables. These variables, grouped by category, are as follows.
 
-	
+
+
 	IDENTIFIERS
 		· patient
-
 
 	DEMOGRAPHICS
 		· sex
 		· age
 		· hospital
-
 
 	OUTCOMES
 		· follow_up
@@ -259,7 +256,4 @@
 
 
 
-
-
-
-
+------------------------------------------------------------------

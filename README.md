@@ -8,7 +8,7 @@
 PROJECT INFORMATION
 -------------------
 
-***WARNING*** - GitHub does not render all HTML content, to view all representations copy and paste notebook links on [here](https://nbviewer.org).**
+***WARNING*** - GitHub does not render all HTML content. To properly view all content, please copy and paste the notebook links [here](https://nbviewer.org).
 
 
 

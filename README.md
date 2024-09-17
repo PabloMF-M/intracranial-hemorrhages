@@ -29,16 +29,20 @@ The aim of this project is to find new prognostic factors of ICH and develop a r
 2.1 (Anonymization, Cleaning and Curation)
 ------------------------------------------
 
-	'ICH_database_complete.xlsx' (not available in this repository due to privacy issues) -->
+Below are the successive databases that have been generated during the anonymization and cleaning process, up to the final database used for the project. In parentheses are the notebooks that were used to carry out the transformations.
+
+
+
+	ICH_database_complete.xlsx (not available in this repository due to privacy issues) -->
  	
-	--(...)--> 'ICH_database_pseudoanonymized_nonredudant.csv' (not available) ------------->
+	--(...)--> ICH_database_pseudoanonymized_nonredudant.csv (not available) ------------->
 
-	--(1. Anonymization 2 (R))--------------> 'ICH_database_anonymized.csv' ---------------->
+	--(1. Anonymization 2 (R))--------------> ICH_database_anonymized.csv ---------------->
 
-	--(2. Cleaning & Curation (R))----------> 'ICH_database.csv'/'ICH_database.rds' & 
-	                                          'ICH_database_metadata.csv'------------------->
+	--(2. Cleaning & Curation (R))----------> ICH_database.csv / ICH_database.rds & 
+	                                          ICH_database_metadata.csv ------------------->
 
-	--(3. Save the dataset in Python-HDF5)--> 'ICH_database.hdf5' -------------------------->
+	--(3. Save the dataset in Python-HDF5)--> ICH_database.hdf5 --------------------------->
 
 	--> ...
 
@@ -69,34 +73,34 @@ The aim of this project is to find new prognostic factors of ICH and develop a r
 
 
 
-3. MATERIALS AND METHODS
+3 - MATERIALS AND METHODS
 ------------------------
 
-	3.1 Available Databases
-	-----------------------
+3.1 Available Databases
+-----------------------
 
-		(not available databases are not described here, they are in Databases/readme_databases.txt)
+*Unavailable databases are not described here, they are described in Databases/readme_databases.txt*
 
-		3.1.1 Datasets
-		--------------
+3.1.1 Datasets
+--------------
 
-        	· 'ICH_database_anonymized.csv': data collected from 300 patients with Intracranial Hemorrhages (ICH) fully anonymized by removing patient identifiers and relevant dates (ex. birth or death date).
+* **ICH_database_anonymized.csv**: data collected from 300 patients with Intracranial Hemorrhages (ICH) was fully anonymized by removing patient identifiers and relevant dates (e.g., birth or death dates).
 
-        	· 'ICH_database.csv': 'ICH_database_anonymized.csv' cleaned after the following steps:
-			-- Assignation of variable datatypes.
-			-- Correction of incorrect data values.
-			-- Rename variables with variable labels.
-			-- Elimination of variables with only one different value.
-			-- Elimination of variables with redundant information.
-			-- Elimination of dates which only contain the value "anonymized".
+* **ICH_database.csv**: ICH_database_anonymized.csv cleaned after the following steps:
+	* Assignation of variable datatypes.
+	* Correction of incorrect data values.
+	* Rename variables with variable labels.
+	* Removal of variables that only had a different value.
+	* Removal of variables with redundant information.
+	* Removal of dates which only contain the value "anonymized".
 
-        	· 'ICH_database.rds': 'ICH_database.csv' saved as R object in .rds to preserve variable datatypes.
+* **ICH_database.rds**: ICH_database.csv saved as R object in .rds (RDS) to preserve variable datatypes.
 
-		· 'ICH_database.hdf5': 'ICH_database.csv' saved as hdf5 file to preserve variable datatypes.
+* **ICH_database.hdf5**: ICH_database.csv saved as .hdf5 file (HDF5) to preserve variable datatypes.
 		
-		
-		3.1.2 Metadata
-		--------------
+
+3.1.2 Metadata
+--------------
 
 		· 'ICH_database_anonymized_metadata.csv': file with information about the variables in 'ICH_database_anonymized.csv':
        			-- Variable_Name: name of the variable (spanish).

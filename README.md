@@ -84,7 +84,7 @@ Below are the successive databases that have been generated during the anonymiza
 3.1.1. Datasets
 ----------------
 
-* **<code>ICH_database_anonymized.csv</code>**: data collected from 300 patients with Intracranial Hemorrhages (ICH) was fully anonymized by removing patient identifiers and relevant dates (e.g., birth or death dates).
+* **<code>ICH_database_anonymized.csv</code>**: data collected from **300 patients** with Intracranial Hemorrhages (ICH) was fully anonymized by removing patient identifiers and relevant dates (e.g., birth or death dates).
 
 * **<code>ICH_database.csv</code>**: <code>ICH_database_anonymized.csv</code> cleaned after the following steps:
 	* Assignation of variable datatypes.
@@ -94,9 +94,9 @@ Below are the successive databases that have been generated during the anonymiza
 	* Removal of variables with redundant information.
 	* Removal of dates which only contain the value "anonymized".
 
-* **<code>ICH_database.rds</code>**: <code>ICH_database.csv</code> saved as R object in .rds (RDS) to preserve variable datatypes.
+* **<code>ICH_database.rds</code>**: <code>ICH_database.csv</code> saved as R object in <code>.rds</code> (RDS) to preserve variable datatypes.
 
-* **<code>ICH_database.hdf5</code>**: <code>ICH_database.csv</code> saved as .hdf5 file (HDF5) to preserve variable datatypes.
+* **<code>ICH_database.hdf5</code>**: <code>ICH_database.csv</code> saved as <code>.hdf5</code> file (HDF5) to preserve variable datatypes.
 		
 
 3.1.2. Metadata
@@ -112,80 +112,78 @@ Below are the successive databases that have been generated during the anonymiza
 	* <code>Values:</code> values that the variable can have.
 	* <code>Maximum_Number_of_Different_Values_in_the_Dataset:</code> maximum number of possible different values in the dataset.
 	* <code>Comment:</code> comments about the variable.
-	* <code>Type_of_Variable:</code> if variable is *a priori* an outcome (dependent), predictor (independent), or if it just contains additional information about the dataset (auxiliary).
+	* <code>Type_of_Variable:</code> if variable is *a priori* an **outcome** (***dependent***) or a **predictor** (***independent***), or if the variable just contains additional information about the dataset (***auxiliary***).
 
-		· 'ICH_database_anonymized_metadata.xls': same as 'ICH_database_anonymized_metadata.csv' but in .xls.
+* **<code>ICH_database_anonymized_metadata.xls</code>**: same as <code>ICH_database_anonymized_metadata.csv</code> but in <code>.xls</code>.
 
-		· 'ICH_database_metadata.csv': file with information about the variables in 'ICH_database.csv':
-       			-- Variable_Name: name of the variable (spanish).
-			-- Variable_Label: name of the variable in the database.
-      			-- Variable_Definition: definition of the variable.
-       			-- R_Datatype: R datatype.
-       			-- Python_Datatype: Python datatype.
-			-- Pandas_Datatype: Pandas datatype.
-       			-- Values: values that the variable can have.
-       			-- Maximum_Number_of_Different_Values_in_the_Dataset: maximum number of possible different values in the dataset.
-       			-- Comment: comments about the variable.
-       			-- Type_of_Variable: if variable is a priori an outcome (dependent) or a predictor (independent), or if the variable just contains additional information about the dataset (auxiliary).
+* **<code>ICH_database_metadata.csv</code>**: file with information about the variables in <code>ICH_database.csv</code>:
+	* <code>Variable_Name</code>: name of the variable (spanish).
+	* <code>Variable_Label</code>: name of the variable in the database.
+	* <code>Variable_Definition</code>: definition of the variable.
+	* <code>R_Datatype</code>: R datatype.
+	* <code>Python_Datatype</code>: Python datatype.
+	* <code>Pandas_Datatype</code>: Pandas datatype.
+	* <code>Values</code>: values that the variable can have.
+	* <code>Maximum_Number_of_Different_Values_in_the_Dataset</code>: maximum number of possible different values in the dataset.
+	* <code>Comment</code>: comments about the variable.
+	* <code>Type_of_Variable</code>: if variable is *a priori* an **outcome** (***dependent***) or a **predictor** (***independent***), or if the variable just contains additional information about the dataset (***auxiliary***).
 
 
 3.2. Notebooks
---------------
+---------------
 
-	· 'A. Loading the dataset in python': describe the best options to load the dataset in python.
+* **A. Loading the dataset in python**: describes the best options to load the dataset in python.
 
-	· 'B. Loading the dataset in R': describe the best options to load the dataset in R.
+* **B. Loading the dataset in R**: describes the best options to load the dataset in R.
 
-    	· '1. Anonymization 2 (R)': load 'ICH_database_nonredudant_pseudoanonymized.csv' and generate 'ICH_database_anonymized.csv'. In a first step, all patient identifiers (IDs,...) were removed. Now this Notebook conducts a second anonymization step, that consists in the anonymization of the dates. This kind of data may contain information which can help to identify patients, so it will be safer to anonymize all variables containing dates. However, to avoid the loss of information three new variables will be generated and added to the database: Time between head CT scan and blood analysis (days), Age at the hospital admission date (years), Survival days after admission (days). This Notebook will conduct this second anonymization step including the following sub-steps:
-
-		1. Load data
-		2. Change the dates into Date types
-		3. Generate the new variables
+* **1. Anonymization 2 (R):** loads <code>ICH_database_nonredudant_pseudoanonymized.csv</code> and generates <code>ICH_database_anonymized.csv</code>. In a first step, all patient identifiers (IDs,...) were removed. This notebook now performs a second anonymization step, which consists of anonymizing dates. This type of data may contain information that could help identify patients, so it is safer to anonymize all variables containing dates. However, to avoid the loss of information, three new variables will be generated and added to the database: <code>Time between head CT scan and blood analysis (days)</code>, <code>Age at hospital admission (years)</code>, and <code>Survival days after admission (days)</code>. This notebook will carry out this second anonymization step, including the following sub-steps.
+		1. Load data.
+		2. Change the dates into <code>Date types.</code>
+		3. Generate the new variables.
 		4. Anonymize the dates and save the anonymized database.
 
-
-    	· '2. Cleaning & Curation (R)': load 'ICH_database_anonymized.csv' & 'ICH_database_anonymized_metadata.csv' and generate 'ICH_database.csv' & 'ICH_database_metadata.csv' after the following steps.
+* **2. Cleaning & Curation (R):** load <code>ICH_database_anonymized.csv</code> & <code>ICH_database_anonymized_metadata.csv</code> and generate <code>ICH_database.csv</code> & <code>ICH_database_metadata.csv</code> after the following steps.
 		
-		1. Load the database
-		2. Check variables: datatypes and values
-		3. Change datatypes when appropriate
-		4. Change values when appropriate
-		5. Delete non-useful variables
-		6. Change column names and re-adapt metadata_database
+		1. Load the database.
+		2. Check variables: datatypes and values.
+		3. Change datatypes when appropriate.
+		4. Change values when appropriate.
+		5. Delete non-useful variables.
+		6. Change column names and re-adapt metadata_database.
 		8. Save the cured database and the metadata database.
 
 
-	· '3. Save the dataset in Python-HDF5': save the dataset in a HDF5 file to easier further usage in Python. This Notebooks includes the following steps:
+* **3. Save the dataset in Python-HDF5:** save the dataset in a HDF5 file to easier further usage in Python. This notebook includes the following steps:
 
 		1. Load dataset metadata and extract an array with categorical columns index.
-		2. Load the dataset: all variables with NaN will be float64 and all variables without NaN int64.
+		2. Load the dataset: all variables with <code>NaN</code> will be <code>float64</code> and all variables without <code>NaN</code> <code>int64.</code>
 		3. Change to categories when appropriate.
 		4. Check datatypes and save in a hdf5 file.
 
 
-    	· '4.1 EDA & Descriptive Statistics of Outcomes': exploring data analysis and descriptive statistics of the priori outcome variables contained in 'ICH_cured.csv'. This Notebook contains the following steps:
+* **4.1 EDA & Descriptive Statistics of Outcomes:** exploring data analysis and descriptive statistics of the * a priori* outcome variables contained in <code>ICH_cured.csv</code>. This notebook contains the following steps.
 
 		1. Define some useful functions for further analysis.
 		2. Load data and metadata.
-		3. Check the pandas datatype and the a priori variable type of the dataset variables.
-		4. Exploring and making a statistical description of the a priori outcome variables.
+		3. Check the pandas datatype and the *a priori* variable type of the dataset variables.
+		4. Exploring and making a statistical description of the *a priori* outcome variables.
 
 
-    	· '4.2 EDA & Descriptive Statistics of Predictors': exploring data analysis and descriptive statistics of the a priori predictor variables contained in 'ICH_cured.csv'. This Notebook contains the following steps:
+* **4.2 EDA & Descriptive Statistics of Predictors:** exploring data analysis and descriptive statistics of the *a priori* predictor variables contained in <code>ICH_cured.csv</code>. This notebook contains the following steps.
 
 		1. Load data and metadata.
 		2. Check the pandas datatype and the a priori variable type of the dataset variables.
-		3. Exploring and making a statistical description of the a priori predictor variables.
+		3. Exploring and making a statistical description of the *a priori* predictor variables.
 
 
-    	· '4.3 EDA & Descriptive Statistics of Dates (R)': this Notebook analyzes the relevant dates, which have been deleted in the databases shared in the repository for anonymization purposes.
+* **4.3 EDA & Descriptive Statistics of Dates (R):** this notebook analyzes the relevant dates, which have been removed in the databases shared in this repository for anonymization purposes.
 
-		1. Load data
-		2. Change dates into Date types
-		3. Descriptive statistics
+		1. Load data.
+		2. Change dates into <code>Date types.</code>
+		3. Descriptive statistics.
 
 
-    	· '5.1 Inferential Statistics - Hypothesis Contrasts (R)': this Notebook is designed to do an statistical analysis following the standards of biostatistics for multiple variables (False Discovery Rate - FDR correction of p-values was included):
+* **5.1 Inferential Statistics - Hypothesis Contrasts (R):** this notebook is designed to do an statistical analysis following the standards of biostatistics for multiple variables (***False Discovery Rate- FDR** *correction of p-values* was included):
 
 		1. Load dataset and metadata.
 		2. Assumption of normality.
@@ -193,33 +191,33 @@ Below are the successive databases that have been generated during the anonymiza
 		4. Statistical tests: hypothesis contrasts.
 
 
-	· '5.2 Inferential Statistics - Survival Analysis': this Notebook conducts a survival analysis of patients who have suffered an intracranial hemorrhage. Survival is defined as survival to hospitalization discharge. Different biostatiscal techniques are used for that purpose, including the well-known Kaplain-Meier estimator, Mantel-Cox (log-rank) test, and the state-of-the-art method for survival prediction until the last adaptations of machine learning algorithms for survival analysis, Cox Proportional Hazards regression.
+* **5.2 Inferential Statistics - Survival Analysis:** this notebook performs a survival analysis of patients who have suffered an intracranial hemorrhage. Survival is defined as survival to hospitalization discharge. Different biostatiscal techniques are used for that purpose, including the well-known ***Kaplain-Meier estimator***, ***Mantel-Cox (log-rank) test***, and the **state-of-the-art** method for survival prediction until the last *adaptations of Machine Learning algorithms for survival analysis*, ***Cox Proportional Hazards regression***,.
 
-		1. Load dataset
-		2. Define survival variables
-		3. Survival functions
-		4. Cox Proportional Hazards regression
-
-
-	· '6. Dimensionality reduction - PCAs & FA': this Notebook explores some dimensionality reduction techniques, including Principal Component Analysis (PCA) and Factorial Analysis (FA). PCA is more appropriate for quantitative data, nevertheless, FA allows to analyze a dataset with numerical and categorical variables.
-
-		1. Load dataset
-		2. Principal Component Analysis (PCAs)
-		3. Factorial Analysis (FA)
+		1. Load dataset.
+		2. Define survival variables.
+		3. Survival functions.
+		4. Cox Proportional Hazards regression.
 
 
-	· '7. Kernel Methods - SVM & SSVM': kernel methods are a type of Machine Learning algorithms used to map input data into a different multidimensional space in which data classes can be easily sepparated. Therefore, this methods are very used to solve classifcation and regression problems. A very well-knowned algorithm of this group is Support Vector Machine (SVM), which has been adapted for solving survival prediction in the named Survival Support Vector Machine (SSVM).
+* **6. Dimensionality reduction - PCAs & FA:** this notebook explores some dimensionality reduction techniques, including ***Principal Component Analysis (PCA)*** and ***Factorial Analysis (FA)***. PCA is more appropriate for quantitative data, nevertheless, FA allows to analyze a dataset with numerical and categorical variables at the same time.
 
-		1. Load dataset
-		2. Support Vector Machine (SVM)
-		3. Survival Support Vector Machine (SSVM)
+		1. Load dataset.
+		2. Principal Component Analysis (PCAs).
+		3. Factorial Analysis (FA).
 
 
-	· '8. RSF, GB model and AFT models': This Notebook explores models based on Random Survival Forest and Gradient Boosted techniques, including a parametric approach for survival function estimation, the well-known Accelerated Failure Time approach.
+* **7. Kernel Methods - SVM & SSVM:** kernel methods are a type of Machine Learning algorithms used to map input data into a different multidimensional space in which data classes can be easily sepparated. Therefore, these methods are widely used to solve classifcation and regression problems. A very well-knowned algorithm of this group is ***Support Vector Machine (SVM)***, which has been adapted for solving survival prediction in the named ***Survival Support Vector Machine (SSVM)***.
 
-		1. Load dataset
-		2. Random Survival Forests
-		3. Gradient Boosted Model
-		4. Accelerated Failure Time Model
+		1. Load dataset.
+		2. Support Vector Machine (SVM).
+		3. Survival Support Vector Machine (SSVM).
+
+
+* **8. RSF, GB model and AFT models:** This notebook explores models based on ***Random Survival Forest*** and ***Gradient Boosted techniques***, including a parametric approach for survival function estimation, the well-known ***Accelerated Failure Time*** approach.
+
+		1. Load dataset.
+		2. Random Survival Forests.
+		3. Gradient Boosted Model.
+		4. Accelerated Failure Time Model.
 
 	-----------------------------------------------------------------------------------------------------

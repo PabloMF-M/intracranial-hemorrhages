@@ -1,46 +1,44 @@
+# DATABASES INFO
 
-DATABASES INFO
---------------
-
-
-1. WORKFLOW
+1 - WORKFLOW
 ------------
 
-	'ICH_database_complete.xlsx' ---->
-	 ----> 'ICH_database_complete_pseudoanonymized.xlsx'/ICH_database_complete_pseudoanonymized.csv ---->
-	 ----> 'ICH_database_pseudoanonymized_nonredudant.csv' ---->
-	 ----> 'ICH_database_anonymized.csv' ---->
-	 ----> 'ICH_database.csv'/'ICH_database.rds'/'ICH_database.hdf5'.
+	ICH_database_complete.xlsx ---->
+	 ----> ICH_database_complete_pseudoanonymized.xlsx / ICH_database_complete_pseudoanonymized.csv ---->
+	 ----> ICH_database_pseudoanonymized_nonredudant.csv ---->
+	 ----> ICH_database_anonymized.csv ---->
+	 ----> ICH_database.csv / ICH_database.rds/ICH_database.hdf5.
 
 	
 
-	'ICH_database_anonymized_metadata.xls'/'ICH_database_anonymized_metadata.csv' ---->
-	 ----> 'ICH_database_metadata.csv'
+	ICH_database_anonymized_metadata.xls / ICH_database_anonymized_metadata.csv ---->
+	 ----> ICH_database_metadata.csv
 
 
 
-2. DATABASES
+2 - DATABASES
 -------------
 
-	· 'ICH_database_complete.xlsx': complete database.
+* **<code>ICH_database_complete.xlsx</code>**: complete database.
 
-	· 'ICH_database_complete_pseudoanonymized.xlsx': database without patients identifiers (NHC, ID, Hospital...) in .xlsx.
+* **<code>ICH_database_complete_pseudoanonymized.xlsx</code>**: database without patients identifiers (NHC, ID, Hospital...) in <code>.xlsx.</code>
 
-	· 'ICH_database_complete_pseudoanonymized.csv': database without patients identifiers (NHC, ID, Hospital...) in .csv.
+* **<code>ICH_database_complete_pseudoanonymized.csv</code>**: database without patients identifiers (NHC, ID, Hospital...) in <code>.csv.</code>
 
-        · 'ICH_database_nonredudant_pseudoanonymized.csv': 'ICH_database_complete_pseudoanonymized.csv' without some redundant or non-useful columns.
+* **<code>ICH_database_nonredudant_pseudoanonymized.csv</code>**: <code>ICH_database_complete_pseudoanonymized.csv</code> without some redundant or non-useful atributes.
 
-        · 'ICH_database_anonymized.csv': 'ICH_database_nonredudant_pseudoanonymized.csv' fully anonymized by the:
+* **<code>ICH_database_anonymized.csv</code>**: <code>ICH_database_nonredudant_pseudoanonymized.csv</code> fully anonymized by the:
+
 		- Anonymization of: Fecha de ingreso, Fecha de alta, Fecha de TC, Fecha análisis de sangre, Fecha nacimiento, Fecha mortalidad.
 		- Incorporation of: Time between blood analysis and head CT scan, Age at the hospital admission date, Survival days after admission.
 
-        · 'ICH_database.csv': 'ICH_database_anonymized.csv' cleaned (assignation of variable datatypes, correction of incorrect data values, rename variables with the variable labels, and elimination of variables with only one different value or with redundant information and dates which only contain the value "anonymized").
+* **<code>ICH_database.csv</code>**: 'ICH_database_anonymized.csv' cleaned (assignation of variable datatypes, correction of incorrect data values, rename variables with the variable labels, and elimination of variables with only one different value or with redundant information and dates which only contain the value "anonymized").
 
-        · 'ICH_database.rds': 'ICH_database.csv' saved as R object in .rds to preserve variable datatypes.
+* **<code>ICH_database.rds</code>**: 'ICH_database.csv' saved as R object in .rds to preserve variable datatypes.
 
-	· 'ICH_database.hdf5': 'ICH_database.csv' saved as hdf5 file to preserve variable datatypes.
+* **<code>ICH_database.hdf5</code>**: 'ICH_database.csv' saved as hdf5 file to preserve variable datatypes.
 
-	· 'ICH_database_anonymized_metadata.csv': file with information about the variables of 'ICH_database_nonredudant_pseudoanonymized.csv' and 'ICH_database_anonymized.csv'. This file contains the following variables:
+* **<code>ICH_database_anonymized_metadata.csv</code>**: file with information about the variables of 'ICH_database_nonredudant_pseudoanonymized.csv' and 'ICH_database_anonymized.csv'. This file contains the following variables:
        		- Variable_Name: name of the variable (spanish).
        	 	- Variable_R_Name: name of the variable given by R.
 		- Variable_Label: recommended name of the variable for further database analysis.
@@ -53,9 +51,9 @@ DATABASES INFO
        		- Comment: comments about the variable.
        		- Type_of_Variable: if variable is a priori an outcome (dependent) or a predictor (independent), or if the variable just contains additional information about the dataset (auxiliary).
 
-	· 'ICH_database_anonymized_metadata.xls': same as 'ICH_database_anonymized_metadata.csv' but in .xls.
+* **<code>ICH_database_anonymized_metadata.xls</code>**: same as 'ICH_database_anonymized_metadata.csv' but in .xls.
 
-	· 'ICH_database_metadata.csv': file with information about the variables of 'ICH_database.csv'. This file contains the following variables:
+* **<code>ICH_database_metadata.csv</code>**: file with information about the variables of 'ICH_database.csv'. This file contains the following variables:
 		- Variable_Name: name of the variable (spanish).
 		- Variable_Label: name of the variable in the database.
       		- Variable_Definition: definition of the variable.

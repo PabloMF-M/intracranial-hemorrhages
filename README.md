@@ -1,8 +1,11 @@
 # Intracranial hemorrhages
 
+
 **Author 1:** Pablo Menéndez Fernández-Miranda MD, PhD, MSc  [✉️](mailto:pablomenendezfernandezmiranda@gmail.com)
 
 **Author 2:** Marta Álvarez de Linera Alperi MD, PhD.
+
+-------------------
 
 
 PROJECT INFORMATION
@@ -12,7 +15,7 @@ PROJECT INFORMATION
 
 
 
-1. ABSTRACT
+1 - ABSTRACT
 -----------
 
 	* THIS PROJECT IS STILL ONGOING!!!!

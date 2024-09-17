@@ -1,19 +1,14 @@
 # Intracranial hemorrhages
 
-**Author 1:** Pablo Menéndez Fernández-Miranda MD, PhD, MSc.[Contactar con nosotros](mailto:pablomenendezfernandezmiranda@gmail.com)
+**Author 1:** Pablo Menéndez Fernández-Miranda MD, PhD, MSc  [✉️](mailto:pablomenendezfernandezmiranda@gmail.com)
 
 **Author 2:** Marta Álvarez de Linera Alperi MD, PhD.
-
 
 
 PROJECT INFORMATION
 -------------------
 
-Author: Pablo Menéndez Fernández-Miranda MD, PhD (pablomenendezfernandezmiranda@gmail.com).
-
-
-
-	* WARNING - GitHub does not render all HTML content, to view all representations copy and paste Notebook links on https://nbviewer.org.
+***WARNING*** - GitHub does not render all HTML content, to view all representations copy and paste notebook links on [here](https://nbviewer.org).**
 
 
 
